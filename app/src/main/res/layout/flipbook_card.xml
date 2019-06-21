@@ -3,31 +3,52 @@
         android:id="@+id/rootCard"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
+            android:contentDescription="@string/image"
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/sunflower"/>
 
     <android.support.constraint.ConstraintLayout
+            android:contentDescription="@string/image_with_text"
+            android:id="@+id/image_with_text_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="invisible">
 
         <ImageView
+                android:contentDescription="@string/image"
                 android:id="@+id/image_with_text"
                 android:layout_width="240dp"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
-        <TextView android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  app:layout_constraintRight_toRightOf="@+id/image_with_text"/>
+        <TextView
+                android:contentDescription="@string/text"
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintRight_toRightOf="@+id/image_with_text"/>
 
     </android.support.constraint.ConstraintLayout>
 
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+        <TextView
+                android:contentDescription="@string/text"
+                android:id="@+id/text_only"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

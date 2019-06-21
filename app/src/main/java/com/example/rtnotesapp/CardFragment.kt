@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.rtnotesapp.MainActivity.Companion.imageIdList
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.card_image_only.view.rootCard
 import kotlinx.android.synthetic.main.flipbook_card.view.*
 
 class CardFragment : Fragment() {
