@@ -5,10 +5,23 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.rtnotesapp.MainActivity.Companion.imageIdList
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.card_image_only.view.rootCard
+import kotlinx.android.synthetic.main.flipbook_card.view.*
 
 class CardFragment : Fragment() {
 
+    fun Array<Int>.getRandom(): Int {
+        return this[(0..this.size - 1).random()]
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.card_image_only, container, false)
+        val view = inflater.inflate(R.layout.flipbook_card, container, false)
+
+        view.rootCard.setOnClickListener { view ->
+            Picasso.with(context).load(imageIdList.getRandom()).into(view.image)
+        }
+        return view
     }
 }
