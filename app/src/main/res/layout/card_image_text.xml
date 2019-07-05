@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-        android:id="@+id/rootCard_image"
+        android:id="@+id/rootCard_image_text"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="wrap_content"
@@ -8,9 +8,15 @@
 
     <ImageView
             android:contentDescription="@string/image"
-            android:id="@+id/image_only"
+            android:id="@+id/imgtxt_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:src="@drawable/sunflower"/>
+
+    <TextView
+            android:contentDescription="@string/text"
+            android:id="@+id/imgtxt_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 </android.support.constraint.ConstraintLayout>

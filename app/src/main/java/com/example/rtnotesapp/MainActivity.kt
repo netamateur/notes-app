@@ -1,12 +1,11 @@
 package com.example.rtnotesapp
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,10 +31,21 @@ class MainActivity : AppCompatActivity() {
         ft.add(R.id.position3, fragment3)
         ft.commit()
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        fab.setOnClickListener {
+            val intent = Intent(this, ListActivity::class.java)
+            startActivity(intent)
         }
+
+//        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_tab_menu)
+//
+//        bottomNav.setOnNavigationItemSelectedListener { item ->
+//            when(item.itemId) {
+//                R.id.action_list -> { true }
+//                R.id.action_collection -> { true }
+//                R.id.action_map -> { true }
+//                else -> false
+//            }
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

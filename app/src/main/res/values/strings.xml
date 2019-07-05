@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">TBA flipbook type app</string>
+    <string name="list_view">List View</string>
     <string name="action_settings">Settings</string>
+    <string name="action_listview">List View</string>
+    <string name="image_with_text">Image+Text</string>
+    <string name="image">Image</string>
+    <string name="text">Text</string>
+    <string name="sample_text">I Ching - Book of Changes</string>
 </resources>
