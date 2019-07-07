@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         ft.commit()
 
         fab.setOnClickListener {
-            val intent = Intent(this, ListActivity::class.java)
+            val intent = Intent(this, NavigationActivity::class.java)
             startActivity(intent)
         }
 
