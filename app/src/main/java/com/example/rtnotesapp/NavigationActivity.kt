@@ -38,6 +38,19 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         navView.setNavigationItemSelectedListener(this)
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        val fragment = CardFragment()
+        val fragment2 = CardFragment()
+        val fragment3 = CardFragment()
+        val ft = supportFragmentManager.beginTransaction()
+        ft.add(R.id.position1, fragment)
+        ft.add(R.id.position2, fragment2)
+        ft.add(R.id.position3, fragment3)
+        ft.commit()
+    }
+
     override fun onBackPressed() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -50,6 +63,7 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.navigation, menu)
+//        menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
@@ -92,5 +106,13 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    companion object {
+        var imageIdList = arrayOf(
+            R.drawable.sunflower,
+            R.drawable.vg_sunflowers,
+            R.drawable.kusama_pumpkins
+        )
     }
 }
