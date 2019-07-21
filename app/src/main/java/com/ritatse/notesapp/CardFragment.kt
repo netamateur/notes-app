@@ -1,11 +1,11 @@
-package com.example.rtnotesapp
+package com.ritatse.notesapp
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.rtnotesapp.MainActivity.Companion.imageIdList
+import com.ritatse.notesapp.NavigationActivity.Companion.imageIdList
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.flipbook_card.view.*
 

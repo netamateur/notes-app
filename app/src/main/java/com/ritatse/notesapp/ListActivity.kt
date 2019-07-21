@@ -1,4 +1,4 @@
-package com.example.rtnotesapp
+package com.ritatse.notesapp
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

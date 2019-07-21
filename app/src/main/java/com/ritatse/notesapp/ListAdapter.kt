@@ -1,4 +1,4 @@
-package com.example.rtnotesapp
+package com.ritatse.notesapp
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
