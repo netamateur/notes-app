@@ -26,6 +26,12 @@ class ListFragment : Fragment() {
             R.layout.content_list, container, false
         )
 
+    //TODO add FAB to this fragment
+//    val fab: FloatingActionButton = findViewById(R.id.fab)
+//    fab.setOnClickListener { view ->
+//        val intent = Intent(this, NoteItemActivity::class.java)
+//        startActivity(intent)
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

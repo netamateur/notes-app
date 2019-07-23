@@ -6,11 +6,10 @@
     <string name="image_with_text">Image+Text</string>
     <string name="image">Image</string>
     <string name="text">Text</string>
+    <string name="note_item_title">New Note Title</string>
     <string name="sample_text">Brazen: Rebel Ladies who Rocked the World</string>
     <string name="title_activity_navigation">Jot: Notes App</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Jot Notes App</string>
     <string name="nav_header_subtitle">user@example.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
@@ -23,4 +22,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

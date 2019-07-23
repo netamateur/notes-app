@@ -3,19 +3,14 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/rootContentFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/app_bar_navigation"
-        tools:context="com.ritatse.notesapp.NavigationActivity">
+        tools:context="com.ritatse.notesapp.NoteItemActivity">
 
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              app:layout_constraintTop_toBottomOf="parent"
-              android:orientation="vertical"
+              app:layout_constraintTop_toTopOf="parent"
               app:layout_constraintLeft_toLeftOf="parent"
-              android:text="hey Tony"/>
+              android:text="@string/sample_text"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name="com.ritatse.notesapp.NavigationActivity"
+                android:name=".NavigationActivity"
                 android:label="@string/title_activity_navigation"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -18,13 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!--<activity-->
-        <!--android:name=".MainActivity"-->
-        <!--android:label="@string/app_name"-->
-        <!--android:theme="@style/AppTheme.NoActionBar">-->
-        <!--</activity>-->
+        <activity android:name=".NoteItemActivity"
+                  android:label="@string/note_item_title">
+        </activity>
         <activity
-                android:name="com.ritatse.notesapp.ListActivity"
+                android:name=".ListActivity"
                 android:label="@string/list_view">
         </activity>
     </application>
