@@ -18,15 +18,9 @@ class CardFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.flipbook_card, container, false)
 
-        loadImageSet()
-
         view.rootCard.setOnClickListener { view ->
             Picasso.with(context).load(imageIdList.getRandom()).into(view.image)
         }
         return view
-    }
-
-    fun loadImageSet() {
-
     }
 }

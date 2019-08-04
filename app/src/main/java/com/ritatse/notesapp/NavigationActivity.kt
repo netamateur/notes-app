@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
@@ -33,10 +34,13 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         val fab: FloatingActionButton = findViewById(R.id.fab)
         //TODO shuffle images set
         fab.setOnClickListener { view ->
-            imageIdList.getRandomSet()
-            //loadImageSet
-
+            loadImageSet()
         }
+    }
+
+    //TODO load new 3 images for the cards, & refresh the cards
+    fun loadImageSet() {
+        imageIdList.getRandomSet()
     }
 
     private fun Array<Int>.getRandomSet(): ArrayList<Int> {
@@ -90,53 +94,43 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+
+        val fragment: Fragment
+
         when (item.itemId) {
             //TODO change icons
 
-            R.id.nav_home -> {
-                //TODO Link to Flipbook Fragment (initial fragment)
-
-            }
             R.id.nav_gallery -> {
                 //TODO Link to List Fragment
                 //TODO not working - attach fragment to activity?
-                val listFragment = ListFragment()
-                val ft = supportFragmentManager.beginTransaction()
-                ft.add(R.id.rootList, listFragment)
-                ft.commit()
-
-                //ft.replace?
-                //shared fragement manager??
+                fragment = ListFragment()
+                displayFragment(fragment)
             }
 
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_tools -> {
+            R.id.nav_category -> {
                 val intent = Intent(this, NoteItemActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
         }
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
+    fun displayFragment(fragment: Fragment) {
+        var fragmentManager = supportFragmentManager
+        fragmentManager
+            .beginTransaction()
+            .replace(R.id.rootContentFragment, fragment)
+            .commit()
+    }
+
     companion object {
         var imageIdList = arrayOf(
-            R.drawable.sunflower,
-            R.drawable.vg_sunflowers,
-            R.drawable.kusama_pumpkins
+            R.drawable.img_demo_01,
+            R.drawable.img_demo_02,
+            R.drawable.img_demo_03
         )
     }
 }
-
-//TODO start new activity from FAB
-//val intent = Intent(this, NavigationActivity::class.java)
-//startActivity(intent)
