@@ -2,7 +2,6 @@ package com.ritatse.notesapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
@@ -31,37 +30,14 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
         navView.setNavigationItemSelectedListener(this)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        //TODO shuffle images set
-        fab.setOnClickListener { view ->
-            loadImageSet()
-        }
+
     }
-
-    //TODO load new 3 images for the cards, & refresh the cards
-    fun loadImageSet() {
-        imageIdList.getRandomSet()
-    }
-
-    private fun Array<Int>.getRandomSet(): ArrayList<Int> {
-        val newSet = ArrayList<Int>()
-
-        var x = 0
-        while (x < 3) {
-            val randomNum = (0 until this.size - 1).random()
-            newSet.add(randomNum)
-        }
-        return newSet
-    }
-
 
     override fun onStart() {
         super.onStart()
 
         val fragment = FlipbookFragment()
-        val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.root, fragment)
-        ft.commit()
+        displayFragment(fragment)
     }
 
     override fun onBackPressed() {
@@ -98,15 +74,18 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         val fragment: Fragment
 
         when (item.itemId) {
-            //TODO change icons
 
             R.id.nav_gallery -> {
-                //TODO Link to List Fragment
-                //TODO not working - attach fragment to activity?
+                fragment = FlipbookFragment()
+                displayFragment(fragment)
+            }
+            R.id.nav_list -> {
                 fragment = ListFragment()
                 displayFragment(fragment)
             }
+            R.id.nav_map -> {
 
+            }
             R.id.nav_category -> {
                 val intent = Intent(this, NoteItemActivity::class.java)
                 startActivity(intent)

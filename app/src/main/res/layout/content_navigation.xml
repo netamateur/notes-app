@@ -11,6 +11,5 @@
         tools:showIn="@layout/app_bar_navigation"
         tools:context="com.ritatse.notesapp.NavigationActivity">
 
-    <include layout="@layout/fragment_flipbook"/>
 
 </android.support.constraint.ConstraintLayout>

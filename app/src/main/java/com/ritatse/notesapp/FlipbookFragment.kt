@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_flipbook.view.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -41,6 +42,13 @@ class FlipbookFragment : Fragment() {
         ft?.add(R.id.position2, fragment2)
         ft?.add(R.id.position3, fragment3)
         ft?.commit()
+
+        //TODO shuffle images set
+        view.fab.setOnClickListener { view ->
+            fragment.generateRandomImage()
+            fragment2.generateRandomImage()
+            fragment3.generateRandomImage()
+        }
 
         return view
     }

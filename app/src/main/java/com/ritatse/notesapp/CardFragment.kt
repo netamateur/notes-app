@@ -19,8 +19,20 @@ class CardFragment : Fragment() {
         val view = inflater.inflate(R.layout.flipbook_card, container, false)
 
         view.rootCard.setOnClickListener { view ->
-            Picasso.with(context).load(imageIdList.getRandom()).into(view.image)
+            generateRandomImage()
         }
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        generateRandomImage()
+    }
+
+    fun generateRandomImage() {
+        view?.let {
+            Picasso.with(context).load(imageIdList.getRandom()).into(it.image)
+        }
     }
 }

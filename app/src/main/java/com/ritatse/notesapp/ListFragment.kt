@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.content_list.view.*
 
 class ListFragment : Fragment() {
 
@@ -21,28 +22,17 @@ class ListFragment : Fragment() {
         retainInstance = true
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-        inflater.inflate(
-            R.layout.content_list, container, false
-        )
-
-    //TODO add FAB to this fragment
-//    val fab: FloatingActionButton = findViewById(R.id.fab)
-//    fab.setOnClickListener { view ->
-//        val intent = Intent(this, NoteItemActivity::class.java)
-//        startActivity(intent)
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        var view = inflater.inflate(R.layout.content_list, container, false)
 
         viewAdapter = ListAdapter(textsList)
         viewManager = LinearLayoutManager(activity)
 
-        recyclerView.apply {
+        recyclerView = view.recyclerView.apply {
 
             layoutManager = viewManager
             adapter = viewAdapter
         }
-
+        return view
     }
 }
