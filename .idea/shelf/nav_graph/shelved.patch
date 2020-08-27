@@ -1,0 +1,72 @@
+Index: .idea/navEditor.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/navEditor.xml	(date 1561698804000)
++++ .idea/navEditor.xml	(date 1561698804000)
+@@ -0,0 +1,43 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="navEditor-manualLayoutAlgorithm2">
++    <option name="myPositions">
++      <map>
++        <entry key="nav_graph.xml">
++          <value>
++            <LayoutPositions>
++              <option name="myPositions">
++                <map>
++                  <entry key="listActivity">
++                    <value>
++                      <LayoutPositions>
++                        <option name="myPosition">
++                          <Point>
++                            <option name="x" value="256" />
++                            <option name="y" value="12" />
++                          </Point>
++                        </option>
++                      </LayoutPositions>
++                    </value>
++                  </entry>
++                  <entry key="mainActivity">
++                    <value>
++                      <LayoutPositions>
++                        <option name="myPosition">
++                          <Point>
++                            <option name="x" value="12" />
++                            <option name="y" value="12" />
++                          </Point>
++                        </option>
++                      </LayoutPositions>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </LayoutPositions>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/navigation/nav_graph.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/navigation/nav_graph.xml	(date 1561698804000)
++++ app/src/main/res/navigation/nav_graph.xml	(date 1561698804000)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<navigation xmlns:android="http://schemas.android.com/apk/res/android"
++            xmlns:app="http://schemas.android.com/apk/res-auto"
++            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
++            app:startDestination="@id/mainActivity">
++
++    <activity android:id="@+id/mainActivity" android:name="com.example.rtnotesapp.MainActivity"
++              android:label="activity_main" tools:layout="@layout/activity_main"/>
++    <activity android:id="@+id/listActivity" android:name="com.example.rtnotesapp.ListActivity"
++              android:label="content_list" tools:layout="@layout/content_list"/>
++</navigation>
+\ No newline at end of file

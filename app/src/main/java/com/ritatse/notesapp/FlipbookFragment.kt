@@ -38,9 +38,9 @@ class FlipbookFragment : Fragment() {
         val fragment2 = CardFragment()
         val fragment3 = CardFragment()
         val ft = activity?.supportFragmentManager?.beginTransaction()
-        ft?.add(R.id.position1, fragment)
-        ft?.add(R.id.position2, fragment2)
-        ft?.add(R.id.position3, fragment3)
+        ft?.add(R.id.topCard, fragment)
+        ft?.add(R.id.middleCard, fragment2)
+        ft?.add(R.id.bottomCard, fragment3)
         ft?.commit()
 
         //TODO shuffle images set

@@ -30,7 +30,6 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
         navView.setNavigationItemSelectedListener(this)
 
-
     }
 
     override fun onStart() {
@@ -109,7 +108,9 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         var imageIdList = arrayOf(
             R.drawable.img_demo_01,
             R.drawable.img_demo_02,
-            R.drawable.img_demo_03
+            R.drawable.img_demo_03,
+            R.drawable.img_demo_04,
+            R.drawable.img_demo_05
         )
     }
 }

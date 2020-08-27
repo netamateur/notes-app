@@ -31,8 +31,18 @@ class CardFragment : Fragment() {
     }
 
     fun generateRandomImage() {
+
+        val displayMetrics = context!!.resources.displayMetrics
+        val height = displayMetrics!!.heightPixels
+        val width = displayMetrics!!.widthPixels
+
         view?.let {
-            Picasso.with(context).load(imageIdList.getRandom()).into(it.image)
+            Picasso.with(context).load(imageIdList.getRandom())
+//                .placeholder(R.drawable.placeholder)
+//                .error(R.drawable.error)
+                .resize(width, height / 3)
+                .centerCrop()
+                .into(it.image)
         }
     }
 }
