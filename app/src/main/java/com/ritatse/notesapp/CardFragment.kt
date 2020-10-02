@@ -1,10 +1,10 @@
 package com.ritatse.notesapp
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.ritatse.notesapp.NavigationActivity.Companion.imageIdList
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.flipbook_card.view.*
@@ -32,12 +32,12 @@ class CardFragment : Fragment() {
 
     fun generateRandomImage() {
 
-        val displayMetrics = context!!.resources.displayMetrics
+        val displayMetrics = requireContext().resources.displayMetrics
         val height = displayMetrics!!.heightPixels
         val width = displayMetrics!!.widthPixels
 
         view?.let {
-            Picasso.with(context).load(imageIdList.getRandom())
+            Picasso.get().load(imageIdList.getRandom())
 //                .placeholder(R.drawable.placeholder)
 //                .error(R.drawable.error)
                 .resize(width, height / 3)
